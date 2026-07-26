@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Referencer · Mine projekter · ORTWED Anlægs Entreprise</title>
-<meta name="description" content="Se mine projekter i Nordsjælland: brolægning, flisebelægning i natursten, anlægsarbejde og haveanlæg. Både private og erhverv.">
+<title>Sommerhus i Kikhavn · Reference · ORTWED Anlægs Entreprise</title>
+<meta name="description" content="Et totalanlæg ved havet – fra håndtegnet plan og jordarbejde til færdige stier og gårdsplads om et rødt sommerhus.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -881,19 +881,12 @@
   }
 </style>
 <style>
-  .ref-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:2rem; max-width:1100px; margin:0 auto; padding:4rem 0 1rem; }
-  .ref-card { display:block; background:var(--white); border:1px solid var(--gray-line); border-radius:6px; overflow:hidden; transition:transform .3s, box-shadow .3s; }
-  .ref-card:hover { transform:translateY(-4px); box-shadow:0 14px 34px rgba(0,0,0,0.10); }
-  .ref-card-img { aspect-ratio:16/11; overflow:hidden; background:var(--gray-bg); }
-  .ref-card-img img { width:100%; height:100%; object-fit:cover; transition:transform .6s; }
-  .ref-card:hover .ref-card-img img { transform:scale(1.05); }
-  .ref-card-body { padding:1.6rem 1.8rem 1.9rem; }
-  .ref-card-meta { display:inline-block; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.18em; font-weight:600; color:var(--green); background:rgba(71,81,21,0.08); padding:0.4rem 1rem; border-radius:2px; }
-  .ref-card h2 { font-size:1.3rem; color:var(--text); margin:1rem 0 0.6rem; line-height:1.25; }
-  .ref-card p { color:var(--text-muted); font-size:0.96rem; line-height:1.6; margin-bottom:1.1rem; }
-  .ref-card .go { color:var(--green); font-weight:600; font-size:0.95rem; }
-  .ref-card .go::after { content:' \2192'; }
-  @media (max-width:900px){ .ref-grid{ grid-template-columns:1fr; padding:2.5rem 0 0.5rem; } }
+  .backbar { background:var(--white); border-bottom:1px solid var(--gray-line); }
+  .backbar .container { padding-top:1.4rem; padding-bottom:1.4rem; }
+  .backlink { color:var(--green); font-weight:600; font-size:0.95rem; }
+  .backlink::before { content:'\2190  '; }
+  .backlink:hover { color:var(--green-dark); }
+  .project:first-of-type { border-top:none; }
 </style>
 </head>
 <body>
@@ -930,63 +923,33 @@
     <button class="menu-toggle" onclick="document.getElementById('mainnav').classList.toggle('open')">☰</button>
   </div>
 </header>
-<section class="page-header">
+<div class="backbar">
+  <div class="container"><a href="referencer.html" class="backlink">Alle referencer</a></div>
+</div>
+<section class="project">
   <div class="container">
-    <div class="eyebrow">Referencer</div>
-    <h1>Mine seneste projekter</h1>
-    <p>Et udpluk af opgaver jeg har afsluttet i Nordsjælland og omegn. Både private haver, sommerhuse og erhvervsopgaver – klik ind på et projekt for at se hele historien.</p>
-  </div>
-</section>
-
-<section style="background:var(--white);">
-  <div class="container">
-    <div class="ref-grid">
-    <a class="ref-card" href="projekt-solroed.html">
-      <div class="ref-card-img"><img src="images/projekter/solroed-raadhus/solroed-4.jpg" alt="Solrød Rådhus – nye stier, kanter og staudebede"></div>
-      <div class="ref-card-body">
-        <span class="ref-card-meta">Erhverv · Solrød</span>
-        <h2>Solrød Rådhus – nye stier, kanter og staudebede</h2>
-        <p>Genbrugsbrosten, corten-stål og et frodigt staudebed gav arealerne omkring rådhuset et roligt, tidløst løft – en offentlig erhvervsopgave.</p>
-        <span class="go">Se projekt</span>
-      </div>
-    </a>
-    <a class="ref-card" href="projekt-vedbaek.html">
-      <div class="ref-card-img"><img src="images/projekter/vedbaek-natursten/vedbaek-1.jpg" alt="Havegang, terrasse og trappe i sandsten – Vedbæk"></div>
-      <div class="ref-card-body">
-        <span class="ref-card-meta">Privat · Vedbæk</span>
-        <h2>Havegang, terrasse og trappe i sandsten – Vedbæk</h2>
-        <p>Broget natursten binder haven sammen – havegang, terrasse og en trappe i massiv sandsten op til hovedøren.</p>
-        <span class="go">Se projekt</span>
-      </div>
-    </a>
-    <a class="ref-card" href="projekt-hornbaek.html">
-      <div class="ref-card-img"><img src="images/projekter/hornbaek-baalplads/hornbaek-1.jpg" alt="Bålplads og siddekreds i marksten – Hornbæk"></div>
-      <div class="ref-card-body">
-        <span class="ref-card-meta">Privat · Hornbæk</span>
-        <h2>Bålplads og siddekreds i marksten – Hornbæk</h2>
-        <p>En rund samlingsplads i håndlagte marksten med træstammebænke – bygget så den ser ud som om den er vokset ud af skovbunden.</p>
-        <span class="go">Se projekt</span>
-      </div>
-    </a>
-    <a class="ref-card" href="projekt-kikhavn.html">
-      <div class="ref-card-img"><img src="images/projekter/hundested-kikhavn/kikhavn-2.jpg" alt="Sommerhus i Kikhavn – totalanlæg fra bunden"></div>
-      <div class="ref-card-body">
-        <span class="ref-card-meta">Privat · Hundested (Kikhavn)</span>
-        <h2>Sommerhus i Kikhavn – totalanlæg fra bunden</h2>
-        <p>Et totalanlæg ved havet – fra håndtegnet plan og jordarbejde til færdige stier og gårdsplads om et rødt sommerhus.</p>
-        <span class="go">Se projekt</span>
-      </div>
-    </a>
+    <div class="project-header">
+      <div class="project-meta">Privat · Hundested (Kikhavn)</div>
+      <h2>Sommerhus i Kikhavn – totalanlæg fra bunden</h2>
+      <p class="lead">Et stort sammenhængende projekt ved havet: fra planlægning og jordarbejde til færdige stier og gårdsplads omkring et charmerende rødt sommerhus.</p>
     </div>
-  </div>
-</section>
-
-<section class="missing-project">
-  <div class="container">
-    <div class="missing-inner">
-      <h2>Hundested (Lynæs) – projektbilleder mangler</h2>
-      <p>Vi havde 3 billeder af et flot projekt fra Lynæs (indkørsel i grå betonbrosten + støttemur i L-elementer), men de blev desværre overskrevet ved upload. Christian skal sende dem igen, så bygger vi projektet ind her.</p>
+    <div class="project-stats"><div class="stat"><div class="stat-label">Type</div><div class="stat-value">Total-anlæg</div></div><div class="stat"><div class="stat-label">Materialer</div><div class="stat-value">Marksten · Betonfliser · Grus</div></div><div class="stat"><div class="stat-label">Særligt</div><div class="stat-value">Placering ved havet</div></div></div>
+    <div class="project-gallery gallery-6">
+      <div class="gallery-item g-big"><img src="images/projekter/hundested-kikhavn/kikhavn-2.jpg" alt="Sommerhusgrund under opførelse"></div>
+      <div class="gallery-item g-small1"><img src="images/projekter/hundested-kikhavn/kikhavn-3.jpg" alt="Grund forberedes til belægning"></div>
+      <div class="gallery-item g-small2"><img src="images/projekter/hundested-kikhavn/kikhavn-4.jpg" alt="Marksten i nærbillede"></div>
+      <div class="gallery-item g-small3"><img src="images/projekter/hundested-kikhavn/kikhavn-5.jpg" alt="Bærelag forberedt"></div>
+      <div class="gallery-item g-small4"><img src="images/projekter/hundested-kikhavn/kikhavn-1.jpg" alt="Håndtegnet plan over projektet"></div>
     </div>
+    <div class="project-story"><h3>Baggrunden</h3>
+<p>Familien havde købt et charmerende rødt sommerhus i Kikhavn med udsigt over havet. Grunden trængte til en helhedsløsning – der skulle være plads til gæster, plads til at nyde solen, og alle overgange mellem terrasse, sti og græs skulle spille sammen.</p>
+<h3>Planlægningen</h3>
+<p>Vi startede med en samlet plan for hele grunden – først på papir, så i marken. Ved kystnære grunde er drænforholdene ekstra vigtige, fordi vinden og saltet gør noget ved både materialer og planter. Jeg tegnede løsningen op, gennemgik den med familien, og vi tog beslutninger sammen om materialer og forløb.</p>
+<h3>Udførelsen</h3>
+<p>Jeg valgte at kombinere store betonfliser til gangstier med marksten som accentmateriale – det giver et rustikt look der passer til det gamle sommerhus, men samtidig er praktisk at gå på. Bærelaget blev lagt ekstra grundigt, med tanke på at grunden ligger tæt på havet hvor jorden bevæger sig med årstiderne.</p>
+<h3>Resultatet</h3>
+<p>Familien har fået en samlet grund der fungerer som et sammenhængende udendørsrum. Materialerne patinerer smukt over tid og passer til sommerhusets karakter. Det er præcis den slags projekt hvor man kan se hver detalje – både i det færdige resultat og under jorden.</p>
+<div class="draft-note">Denne historie er et udkast lavet af Claude – Christian skal verificere og rette detaljerne.</div></div>
   </div>
 </section>
 <section class="cta-simple">

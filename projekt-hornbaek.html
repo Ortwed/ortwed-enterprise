@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Referencer · Mine projekter · ORTWED Anlægs Entreprise</title>
-<meta name="description" content="Se mine projekter i Nordsjælland: brolægning, flisebelægning i natursten, anlægsarbejde og haveanlæg. Både private og erhverv.">
+<title>Bålplads i marksten, Hornbæk · Reference · ORTWED Anlægs Entreprise</title>
+<meta name="description" content="En rund samlingsplads i håndlagte marksten med træstammebænke – bygget så den ser ud som om den er vokset ud af skovbunden.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -881,19 +881,12 @@
   }
 </style>
 <style>
-  .ref-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:2rem; max-width:1100px; margin:0 auto; padding:4rem 0 1rem; }
-  .ref-card { display:block; background:var(--white); border:1px solid var(--gray-line); border-radius:6px; overflow:hidden; transition:transform .3s, box-shadow .3s; }
-  .ref-card:hover { transform:translateY(-4px); box-shadow:0 14px 34px rgba(0,0,0,0.10); }
-  .ref-card-img { aspect-ratio:16/11; overflow:hidden; background:var(--gray-bg); }
-  .ref-card-img img { width:100%; height:100%; object-fit:cover; transition:transform .6s; }
-  .ref-card:hover .ref-card-img img { transform:scale(1.05); }
-  .ref-card-body { padding:1.6rem 1.8rem 1.9rem; }
-  .ref-card-meta { display:inline-block; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.18em; font-weight:600; color:var(--green); background:rgba(71,81,21,0.08); padding:0.4rem 1rem; border-radius:2px; }
-  .ref-card h2 { font-size:1.3rem; color:var(--text); margin:1rem 0 0.6rem; line-height:1.25; }
-  .ref-card p { color:var(--text-muted); font-size:0.96rem; line-height:1.6; margin-bottom:1.1rem; }
-  .ref-card .go { color:var(--green); font-weight:600; font-size:0.95rem; }
-  .ref-card .go::after { content:' \2192'; }
-  @media (max-width:900px){ .ref-grid{ grid-template-columns:1fr; padding:2.5rem 0 0.5rem; } }
+  .backbar { background:var(--white); border-bottom:1px solid var(--gray-line); }
+  .backbar .container { padding-top:1.4rem; padding-bottom:1.4rem; }
+  .backlink { color:var(--green); font-weight:600; font-size:0.95rem; }
+  .backlink::before { content:'\2190  '; }
+  .backlink:hover { color:var(--green-dark); }
+  .project:first-of-type { border-top:none; }
 </style>
 </head>
 <body>
@@ -930,63 +923,33 @@
     <button class="menu-toggle" onclick="document.getElementById('mainnav').classList.toggle('open')">☰</button>
   </div>
 </header>
-<section class="page-header">
+<div class="backbar">
+  <div class="container"><a href="referencer.html" class="backlink">Alle referencer</a></div>
+</div>
+<section class="project">
   <div class="container">
-    <div class="eyebrow">Referencer</div>
-    <h1>Mine seneste projekter</h1>
-    <p>Et udpluk af opgaver jeg har afsluttet i Nordsjælland og omegn. Både private haver, sommerhuse og erhvervsopgaver – klik ind på et projekt for at se hele historien.</p>
-  </div>
-</section>
-
-<section style="background:var(--white);">
-  <div class="container">
-    <div class="ref-grid">
-    <a class="ref-card" href="projekt-solroed.html">
-      <div class="ref-card-img"><img src="images/projekter/solroed-raadhus/solroed-4.jpg" alt="Solrød Rådhus – nye stier, kanter og staudebede"></div>
-      <div class="ref-card-body">
-        <span class="ref-card-meta">Erhverv · Solrød</span>
-        <h2>Solrød Rådhus – nye stier, kanter og staudebede</h2>
-        <p>Genbrugsbrosten, corten-stål og et frodigt staudebed gav arealerne omkring rådhuset et roligt, tidløst løft – en offentlig erhvervsopgave.</p>
-        <span class="go">Se projekt</span>
-      </div>
-    </a>
-    <a class="ref-card" href="projekt-vedbaek.html">
-      <div class="ref-card-img"><img src="images/projekter/vedbaek-natursten/vedbaek-1.jpg" alt="Havegang, terrasse og trappe i sandsten – Vedbæk"></div>
-      <div class="ref-card-body">
-        <span class="ref-card-meta">Privat · Vedbæk</span>
-        <h2>Havegang, terrasse og trappe i sandsten – Vedbæk</h2>
-        <p>Broget natursten binder haven sammen – havegang, terrasse og en trappe i massiv sandsten op til hovedøren.</p>
-        <span class="go">Se projekt</span>
-      </div>
-    </a>
-    <a class="ref-card" href="projekt-hornbaek.html">
-      <div class="ref-card-img"><img src="images/projekter/hornbaek-baalplads/hornbaek-1.jpg" alt="Bålplads og siddekreds i marksten – Hornbæk"></div>
-      <div class="ref-card-body">
-        <span class="ref-card-meta">Privat · Hornbæk</span>
-        <h2>Bålplads og siddekreds i marksten – Hornbæk</h2>
-        <p>En rund samlingsplads i håndlagte marksten med træstammebænke – bygget så den ser ud som om den er vokset ud af skovbunden.</p>
-        <span class="go">Se projekt</span>
-      </div>
-    </a>
-    <a class="ref-card" href="projekt-kikhavn.html">
-      <div class="ref-card-img"><img src="images/projekter/hundested-kikhavn/kikhavn-2.jpg" alt="Sommerhus i Kikhavn – totalanlæg fra bunden"></div>
-      <div class="ref-card-body">
-        <span class="ref-card-meta">Privat · Hundested (Kikhavn)</span>
-        <h2>Sommerhus i Kikhavn – totalanlæg fra bunden</h2>
-        <p>Et totalanlæg ved havet – fra håndtegnet plan og jordarbejde til færdige stier og gårdsplads om et rødt sommerhus.</p>
-        <span class="go">Se projekt</span>
-      </div>
-    </a>
+    <div class="project-header">
+      <div class="project-meta">Privat · Hornbæk</div>
+      <h2>Bålplads og siddekreds i marksten – Hornbæk</h2>
+      <p class="lead">I en frodig skovhave nær Hornbæk byggede jeg en rund samlingsplads: en cirkel af håndlagte marksten med rustikke træstammebænke omkring et centralt midterfelt.</p>
     </div>
-  </div>
-</section>
-
-<section class="missing-project">
-  <div class="container">
-    <div class="missing-inner">
-      <h2>Hundested (Lynæs) – projektbilleder mangler</h2>
-      <p>Vi havde 3 billeder af et flot projekt fra Lynæs (indkørsel i grå betonbrosten + støttemur i L-elementer), men de blev desværre overskrevet ved upload. Christian skal sende dem igen, så bygger vi projektet ind her.</p>
+    <div class="project-stats"><div class="stat"><div class="stat-label">Type</div><div class="stat-value">Marksten + siddekreds</div></div><div class="stat"><div class="stat-label">Materialer</div><div class="stat-value">Marksten · Træstammer</div></div><div class="stat"><div class="stat-label">Særligt</div><div class="stat-value">Håndlagt mønster</div></div></div>
+    <div class="project-gallery gallery-6">
+      <div class="gallery-item g-big"><img src="images/projekter/hornbaek-baalplads/hornbaek-1.jpg" alt="Rund siddekreds i marksten set fra oven"></div>
+      <div class="gallery-item g-small1"><img src="images/projekter/hornbaek-baalplads/hornbaek-2.jpg" alt="Siddekreds med træstammebænke"></div>
+      <div class="gallery-item g-small2"><img src="images/projekter/hornbaek-baalplads/hornbaek-3.jpg" alt="Træstammebænk og skammel"></div>
+      <div class="gallery-item g-small3"><img src="images/projekter/hornbaek-baalplads/hornbaek-4.jpg" alt="Nærbillede af træstammebænk"></div>
+      <div class="gallery-item g-small4"><img src="images/projekter/hornbaek-baalplads/hornbaek-5.jpg" alt="Håndlagt marksten i mønster"></div>
     </div>
+    <div class="project-story"><h3>Baggrunden</h3>
+<p>I en frodig skovhave nær Hornbæk ønskede familien et samlingssted – et sted at sidde sammen, tænde bål og nyde omgivelserne. Det skulle falde naturligt ind i den vilde, grønne have og virke som om det altid havde stået der.</p>
+<h3>Løsningen</h3>
+<p>Jeg anlagde en rund plads belagt med marksten – de runde, danske kampesten der passer perfekt til en naturhave. Stenene blev lagt i hånden, én ad gangen, i et cirkelmønster. Rundt om pladsen satte jeg bænke og skamler skåret af massive træstammer, så siddepladserne er en del af naturmaterialet frem for et fremmed møbel.</p>
+<h3>Detaljerne</h3>
+<p>Marksten er tidskrævende at lægge, fordi hver sten er forskellig og skal vendes og pakkes, så fladen bliver stabil at gå på. Bunden blev opbygget med afvanding, så pladsen holder sig fast og ikke skrider, og træstammerne blev sat i niveau, så man sidder godt. Overgangen til græsset blev holdt blød, så cirklen glider ind i haven.</p>
+<h3>Resultatet</h3>
+<p>Familien har fået et samlingssted der ser ud som om det er vokset ud af skovbunden. Det er en helt anden type opgave end en indkørsel eller terrasse – og et godt eksempel på, at natursten og håndlagt arbejde kan skabe noget med sjæl, man ikke får med færdige betonelementer.</p>
+<div class="draft-note">Denne historie er et udkast lavet af Claude – Christian skal verificere og rette detaljerne (bl.a. stentype og hvad kunden lagde vægt på).</div></div>
   </div>
 </section>
 <section class="cta-simple">
