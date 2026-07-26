@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Referencer · Mine projekter · ORTWED Anlægs Entreprise</title>
-<meta name="description" content="Se mine projekter i Nordsjælland: brolægning, flisebelægning i natursten, anlægsarbejde og haveanlæg. Både private og erhverv.">
+<title>Indkørsel og støttemur i Lynæs · Reference · ORTWED Anlægs Entreprise</title>
+<meta name="description" content="Ny indkørsel i grå betonbrosten og en støttemur i betonelementer, der tager terrænforskellen og giver rene kanter.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -881,19 +881,20 @@
   }
 </style>
 <style>
-  .ref-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:2rem; max-width:1100px; margin:0 auto; padding:4rem 0 1rem; }
-  .ref-card { display:block; background:var(--white); border:1px solid var(--gray-line); border-radius:6px; overflow:hidden; transition:transform .3s, box-shadow .3s; }
-  .ref-card:hover { transform:translateY(-4px); box-shadow:0 14px 34px rgba(0,0,0,0.10); }
-  .ref-card-img { aspect-ratio:16/11; overflow:hidden; background:var(--gray-bg); }
-  .ref-card-img img { width:100%; height:100%; object-fit:cover; transition:transform .6s; }
-  .ref-card:hover .ref-card-img img { transform:scale(1.05); }
-  .ref-card-body { padding:1.6rem 1.8rem 1.9rem; }
-  .ref-card-meta { display:inline-block; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.18em; font-weight:600; color:var(--green); background:rgba(71,81,21,0.08); padding:0.4rem 1rem; border-radius:2px; }
-  .ref-card h2 { font-size:1.3rem; color:var(--text); margin:1rem 0 0.6rem; line-height:1.25; }
-  .ref-card p { color:var(--text-muted); font-size:0.96rem; line-height:1.6; margin-bottom:1.1rem; }
-  .ref-card .go { color:var(--green); font-weight:600; font-size:0.95rem; }
-  .ref-card .go::after { content:' \2192'; }
-  @media (max-width:900px){ .ref-grid{ grid-template-columns:1fr; padding:2.5rem 0 0.5rem; } }
+  .backbar { background:var(--white); border-bottom:1px solid var(--gray-line); }
+  .backbar .container { padding-top:1.4rem; padding-bottom:1.4rem; }
+  .backlink { color:var(--green); font-weight:600; font-size:0.95rem; }
+  .backlink::before { content:'\2190  '; }
+  .backlink:hover { color:var(--green-dark); }
+  .project:first-of-type { border-top:none; }
+  .gallery-3 { grid-template-columns:repeat(2,1fr); grid-template-rows:360px 240px; grid-template-areas:"big big" "s1 s2"; }
+  .gallery-3 .g-big{ grid-area:big; }
+  .gallery-3 .g-small1{ grid-area:s1; }
+  .gallery-3 .g-small2{ grid-area:s2; }
+  @media (max-width:900px){
+    .gallery-3{ grid-template-columns:1fr; grid-template-rows:repeat(3,220px); grid-template-areas:none; }
+    .gallery-3 .g-big, .gallery-3 .g-small1, .gallery-3 .g-small2{ grid-area:auto; }
+  }
 </style>
 </head>
 <body>
@@ -930,63 +931,31 @@
     <button class="menu-toggle" onclick="document.getElementById('mainnav').classList.toggle('open')">☰</button>
   </div>
 </header>
-<section class="page-header">
+<div class="backbar">
+  <div class="container"><a href="referencer.html" class="backlink">Alle referencer</a></div>
+</div>
+<section class="project">
   <div class="container">
-    <div class="eyebrow">Referencer</div>
-    <h1>Mine seneste projekter</h1>
-    <p>Et udpluk af opgaver jeg har afsluttet i Nordsjælland og omegn. Både private haver, sommerhuse og erhvervsopgaver – klik ind på et projekt for at se hele historien.</p>
-  </div>
-</section>
-
-<section style="background:var(--white);">
-  <div class="container">
-    <div class="ref-grid">
-    <a class="ref-card" href="projekt-solroed.html">
-      <div class="ref-card-img"><img src="images/projekter/solroed-raadhus/solroed-4.jpg" alt="Solrød Rådhus – nye stier, kanter og staudebede"></div>
-      <div class="ref-card-body">
-        <span class="ref-card-meta">Erhverv · Solrød</span>
-        <h2>Solrød Rådhus – nye stier, kanter og staudebede</h2>
-        <p>Genbrugsbrosten, corten-stål og et frodigt staudebed gav arealerne omkring rådhuset et roligt, tidløst løft – en offentlig erhvervsopgave.</p>
-        <span class="go">Se projekt</span>
-      </div>
-    </a>
-    <a class="ref-card" href="projekt-vedbaek.html">
-      <div class="ref-card-img"><img src="images/projekter/vedbaek-natursten/vedbaek-1.jpg" alt="Havegang, terrasse og trappe i sandsten – Vedbæk"></div>
-      <div class="ref-card-body">
-        <span class="ref-card-meta">Privat · Vedbæk</span>
-        <h2>Havegang, terrasse og trappe i sandsten – Vedbæk</h2>
-        <p>Broget natursten binder haven sammen – havegang, terrasse og en trappe i massiv sandsten op til hovedøren.</p>
-        <span class="go">Se projekt</span>
-      </div>
-    </a>
-    <a class="ref-card" href="projekt-lynaes.html">
-      <div class="ref-card-img"><img src="images/projekter/lynaes/lynaes-1.jpg" alt="Indkørsel og støttemur – Lynæs"></div>
-      <div class="ref-card-body">
-        <span class="ref-card-meta">Privat · Hundested (Lynæs)</span>
-        <h2>Indkørsel og støttemur – Lynæs</h2>
-        <p>Ny indkørsel i grå betonbrosten og en støttemur i betonelementer, der tager terrænforskellen og giver rene kanter.</p>
-        <span class="go">Se projekt</span>
-      </div>
-    </a>
-    <a class="ref-card" href="projekt-hornbaek.html">
-      <div class="ref-card-img"><img src="images/projekter/hornbaek-baalplads/hornbaek-1.jpg" alt="Bålplads og siddekreds i marksten – Hornbæk"></div>
-      <div class="ref-card-body">
-        <span class="ref-card-meta">Privat · Hornbæk</span>
-        <h2>Bålplads og siddekreds i marksten – Hornbæk</h2>
-        <p>En rund samlingsplads i håndlagte marksten med træstammebænke – bygget så den ser ud som om den er vokset ud af skovbunden.</p>
-        <span class="go">Se projekt</span>
-      </div>
-    </a>
-    <a class="ref-card" href="projekt-kikhavn.html">
-      <div class="ref-card-img"><img src="images/projekter/hundested-kikhavn/kikhavn-2.jpg" alt="Sommerhus i Kikhavn – totalanlæg fra bunden"></div>
-      <div class="ref-card-body">
-        <span class="ref-card-meta">Privat · Hundested (Kikhavn)</span>
-        <h2>Sommerhus i Kikhavn – totalanlæg fra bunden</h2>
-        <p>Et totalanlæg ved havet – fra håndtegnet plan og jordarbejde til færdige stier og gårdsplads om et rødt sommerhus.</p>
-        <span class="go">Se projekt</span>
-      </div>
-    </a>
+    <div class="project-header">
+      <div class="project-meta">Privat · Hundested (Lynæs)</div>
+      <h2>Indkørsel og støttemur – Lynæs</h2>
+      <p class="lead">En skrånende grund i Lynæs fik en ny, solid indkørsel i grå betonbrosten og en støttemur i betonelementer, der holder terrænet på plads og giver rene, skarpe kanter.</p>
     </div>
+    <div class="project-stats"><div class="stat"><div class="stat-label">Type</div><div class="stat-value">Brolægning + støttemur</div></div><div class="stat"><div class="stat-label">Materialer</div><div class="stat-value">Grå betonbrosten · Betonelementer</div></div><div class="stat"><div class="stat-label">Særligt</div><div class="stat-value">Terrænregulering</div></div></div>
+    <div class="project-gallery gallery-3">
+      <div class="gallery-item g-big"><img src="images/projekter/lynaes/lynaes-1.jpg" alt="Færdig indkørsel i grå betonbrosten"></div>
+      <div class="gallery-item g-small1"><img src="images/projekter/lynaes/lynaes-2.jpg" alt="Støttemur i betonelementer langs indkørslen"></div>
+      <div class="gallery-item g-small2"><img src="images/projekter/lynaes/lynaes-3.jpg" alt="Nærbillede af støttemur i betonelementer"></div>
+    </div>
+    <div class="project-story"><h3>Baggrunden</h3>
+<p>Grunden i Lynæs havde en tydelig terrænforskel, og den gamle indkørsel trængte til udskiftning. Der var brug for to ting på én gang: en holdbar ny indkørsel, og en løsning der kunne tage højdeforskellen mod nabogrunden, så jorden ikke skred ud.</p>
+<h3>Løsningen</h3>
+<p>Jeg lagde en ny indkørsel i grå betonbrosten – et robust og vedligeholdelsesfrit materiale der kan holde til biler år efter år, og som passer pænt til det røde murstenshus. Terrænforskellen blev løst med en støttemur i betonelementer, der er stablet solidt op og holder skråningen på plads.</p>
+<h3>Detaljerne</h3>
+<p>Støttemuren blev sat på et bæredygtigt fundament, så den står helt lige og kan bære trykket fra jorden bag den. Indkørslen blev bygget op med korrekt bærelag og fald, så regnvand ledes væk fra huset. Overgangene mellem mur, indkørsel og de eksisterende flader blev tilpasset, så det hele fremstår som en samlet løsning.</p>
+<h3>Resultatet</h3>
+<p>Grunden har fået en indkørsel der både er praktisk og pæn, og en støttemur der løser terrænet én gang for alle. Det er et godt eksempel på en opgave hvor brolægning og anlægsarbejde spiller sammen – begge dele skal være i orden for at resultatet holder.</p>
+<div class="draft-note">Denne historie er et udkast lavet af Claude – Christian skal verificere og rette detaljerne.</div></div>
   </div>
 </section>
 <section class="cta-simple">
