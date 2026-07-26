@@ -8,7 +8,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-
 <style>
   :root {
     --green-dark: #2D3510;
@@ -743,10 +742,8 @@
     .faq-block, .refs-section, .cta-simple, .contact-section { padding: 3.5rem 0; }
   }
 </style>
-
 </head>
 <body>
-
 <header>
   <div class="header-inner">
     <a href="index.html" class="logo">
@@ -781,7 +778,6 @@
   </div>
 </header>
 
-
 <section class="page-header">
   <div class="container">
     <div class="eyebrow">Kontakt</div>
@@ -798,7 +794,7 @@
         <h3>Sådan får du fat i mig</h3>
 
         <div class="contact-item">
-          <div class="contact-icon">✆</div>
+          <div class="contact-icon">&#9990;</div>
           <div>
             <div class="contact-label">Telefon</div>
             <div class="contact-value"><a href="tel:+4540682220">(+45) 40 68 22 20</a></div>
@@ -806,7 +802,7 @@
         </div>
 
         <div class="contact-item">
-          <div class="contact-icon">✉</div>
+          <div class="contact-icon">&#9993;</div>
           <div>
             <div class="contact-label">E-mail</div>
             <div class="contact-value"><a href="mailto:info@ortwed.dk">info@ortwed.dk</a></div>
@@ -814,7 +810,7 @@
         </div>
 
         <div class="contact-item">
-          <div class="contact-icon">◉</div>
+          <div class="contact-icon">&#9673;</div>
           <div>
             <div class="contact-label">Adresse</div>
             <div class="contact-value">Amtsvejen 211A<br>3390 Hundested</div>
@@ -822,7 +818,7 @@
         </div>
 
         <div class="contact-item">
-          <div class="contact-icon">◷</div>
+          <div class="contact-icon">&#9719;</div>
           <div>
             <div class="contact-label">Svartid</div>
             <div class="contact-value">Inden for 24 timer</div>
@@ -840,10 +836,8 @@
         </div>
       </div>
 
-      <form action="https://formspree.io/f/YOUR_FORMSPREE_ID_HERE" method="POST" enctype="multipart/form-data">
-        <div class="placeholder-note">
-          <strong>Note til Christian:</strong> Formularen bruger en placeholder-adresse. Opret en Formspree-konto på info@ortwed.dk og indsæt det rigtige endpoint i action-attributten.
-        </div>
+      <form action="https://formspree.io/f/mnjelarq" method="POST">
+        <input type="hidden" name="_subject" value="Ny henvendelse fra ortwed.dk">
 
         <div class="form-title">Send en henvendelse</div>
         <div class="form-subtitle">Jo mere du fortæller, jo bedre kan jeg give dig et retvisende tilbud.</div>
@@ -861,7 +855,7 @@
 
         <div class="form-group">
           <label for="email">E-mail <span class="required">*</span></label>
-          <input type="email" id="email" name="Email" required placeholder="din@email.dk">
+          <input type="email" id="email" name="email" required placeholder="din@email.dk">
         </div>
 
         <div class="form-group">
@@ -886,10 +880,10 @@
             <label for="size">Omtrentlig størrelse <span class="optional">(valgfrit)</span></label>
             <select id="size" name="Størrelse">
               <option value="">Vælg...</option>
-              <option>Under 20 m²</option>
-              <option>20-50 m²</option>
-              <option>50-100 m²</option>
-              <option>Over 100 m²</option>
+              <option>Under 20 m&sup2;</option>
+              <option>20-50 m&sup2;</option>
+              <option>50-100 m&sup2;</option>
+              <option>Over 100 m&sup2;</option>
               <option>Ved ikke</option>
             </select>
           </div>
@@ -910,12 +904,7 @@
 
         <div class="form-group">
           <label for="message">Beskriv opgaven <span class="optional">(valgfrit men anbefalet)</span></label>
-          <textarea id="message" name="Beskrivelse" placeholder="Fortæl om opgaven — hvad drømmer du om, hvordan ser det ud i dag, er der noget særligt jeg skal vide?"></textarea>
-        </div>
-
-        <div class="form-group">
-          <label for="images">Billeder af opgaven <span class="optional">(valgfrit)</span></label>
-          <input type="file" id="images" name="Billeder" accept="image/*" multiple>
+          <textarea id="message" name="Beskrivelse" placeholder="Fortæl om opgaven — hvad drømmer du om, hvordan ser det ud i dag, er der noget særligt jeg skal vide? Du er velkommen til at sende billeder på SMS til 40 68 22 20 bagefter."></textarea>
         </div>
 
         <button type="submit">Send henvendelse</button>
@@ -926,8 +915,6 @@
     </div>
   </div>
 </section>
-
-
 
 <footer>
   <div class="container">
@@ -957,6 +944,5 @@
     </div>
   </div>
 </footer>
-
 </body>
 </html>
