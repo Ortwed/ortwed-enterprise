@@ -603,6 +603,25 @@
     border: 1px solid var(--gray-line);
   }
   .map-container iframe { width: 100%; height: 100%; border: 0; }
+  /* Klik-for-at-vise kort (ingen cookies før brugeren selv klikker) */
+  .map-consent {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background: var(--gray-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 1.5rem;
+    cursor: pointer;
+    text-align: center;
+    font-family: inherit;
+  }
+  .map-consent:hover { background: #ECE9E1; }
+  .map-consent-title { font-weight: 600; color: var(--green); font-size: 1rem; }
+  .map-consent-sub { font-size: 0.8rem; color: var(--text-muted); max-width: 320px; line-height: 1.5; }
 
   form { background: var(--white); padding: 2.5rem; border-radius: 4px; }
   form .form-title { font-size: 1.3rem; color: var(--text); margin-bottom: 0.5rem; }
@@ -772,9 +791,8 @@
       </ul>
     </nav>
     <div class="social-icons">
-      <a href="#" class="social-icon" title="Facebook">f</a>
-      <a href="#" class="social-icon" title="Instagram">◉</a>
-      <a href="#" class="social-icon" title="Google Maps">▾</a>
+      <a href="https://www.facebook.com/profile.php?id=100075989241832" class="social-icon" title="Facebook" target="_blank" rel="noopener">f</a>
+      <a href="https://www.google.com/maps/place/Amtsvejen+211A,+3390+Hundested" class="social-icon" title="Find vej" target="_blank" rel="noopener">▾</a>
       <a href="kontakt.html" class="social-icon" title="Kontakt">✉</a>
     </div>
     <button class="menu-toggle" onclick="document.getElementById('mainnav').classList.toggle('open')">☰</button>
@@ -932,7 +950,7 @@
       <div class="footer-brand">
         <h4>ORTWED Anlægs Entreprise APS</h4>
         <p>Anlægsgartner og brolægger i Nordsjælland. Erfaring, ærligt håndværk og personlig kontakt gennem hele projektet.</p>
-        <a href="https://www.facebook.com/111258001350387" class="footer-fb">f</a>
+        <a href="https://www.facebook.com/profile.php?id=100075989241832" class="footer-fb" target="_blank" rel="noopener">f</a>
       </div>
       <div>
         <h5>Menu</h5>
@@ -950,7 +968,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      © 2026 ORTWED Anlægs Entreprise · Anlægsgartner og brolægger i Nordsjælland
+      © 2026 ORTWED Anlægs Entreprise · CVR 43071149 · Anlægsgartner og brolægger i Nordsjælland
     </div>
   </div>
 </footer>
