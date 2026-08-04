@@ -863,7 +863,7 @@
         </div>
       </div>
 
-      <form action="https://formspree.io/f/mdennpga" method="POST" enctype="multipart/form-data">
+      <form id="kontaktform" action="https://formspree.io/f/mdennpga" method="POST" enctype="multipart/form-data">
 
         <div class="form-title">Send en henvendelse</div>
         <div class="form-subtitle">Jo mere du fortæller, jo bedre kan jeg give dig et retvisende tilbud.</div>
@@ -943,6 +943,21 @@
         <p class="form-note">Jeg vender tilbage inden for 24 timer på hverdage.</p>
       </form>
 
+      <style>
+        .form-success, .form-error { background: var(--white); padding: 2.5rem; border-radius: 4px; }
+        .form-success { border-left: 4px solid var(--green); }
+        .form-success-title { font-size: 1.4rem; color: var(--green); font-weight: 700; margin-bottom: 0.8rem; }
+        .form-success p { color: var(--text-muted); line-height: 1.6; margin: 0; }
+        .form-error { border-left: 4px solid #C0392B; color: var(--text-muted); line-height: 1.6; }
+      </style>
+      <div id="formTak" class="form-success" style="display:none;">
+        <div class="form-success-title">Tak for din henvendelse!</div>
+        <p>Jeg har modtaget din besked og vender tilbage inden for 24 timer på hverdage.</p>
+      </div>
+      <div id="formFejl" class="form-error" style="display:none;">
+        Beklager — der skete en fejl, og beskeden blev ikke sendt. Prøv igen om lidt.
+      </div>
+
     </div>
   </div>
 </section>
@@ -952,6 +967,34 @@ function loadOrtwedMap() {
   var w = document.getElementById('mapWrap');
   w.innerHTML = '<iframe src="https://maps.google.com/maps?q=Amtsvejen%20211A%2C%203390%20Hundested&z=15&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ortwed Anlægs Entreprise - Amtsvejen 211A, 3390 Hundested"></iframe>';
 }
+(function(){
+  var form = document.getElementById('kontaktform');
+  if(!form) return;
+  var tak = document.getElementById('formTak');
+  var fejl = document.getElementById('formFejl');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if(fejl) fejl.style.display = 'none';
+    var btn = form.querySelector('button[type="submit"]');
+    var label = btn ? btn.textContent : '';
+    if(btn){ btn.disabled = true; btn.textContent = 'Sender...'; }
+    fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } })
+      .then(function(res){
+        if(res.ok){
+          form.reset();
+          form.style.display = 'none';
+          if(tak){ tak.style.display = 'block'; tak.scrollIntoView({behavior:'smooth', block:'center'}); }
+        } else {
+          if(fejl) fejl.style.display = 'block';
+          if(btn){ btn.disabled = false; btn.textContent = label; }
+        }
+      })
+      .catch(function(){
+        if(fejl) fejl.style.display = 'block';
+        if(btn){ btn.disabled = false; btn.textContent = label; }
+      });
+  });
+})();
 </script>
 
 
