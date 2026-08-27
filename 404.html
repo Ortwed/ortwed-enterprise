@@ -3,12 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Solrød Rådhus · Reference · ORTWED</title>
-<meta name="description" content="Nye stier i nordisk blandet chaussésten, kanter i corten-stål og et stort staudebed omkring rådhuset.">
+<title>Siden findes ikke · ORTWED</title>
+<meta name="description" content="Siden findes ikke. Gå til forsiden eller se mine ydelser og referencer.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#475115">
+<meta name="robots" content="noindex, follow">
 <style>
   :root {
     --green-dark: #2D3510;
@@ -762,26 +766,6 @@
     .faq-block, .refs-section, .cta-simple, .contact-section { padding: 3.5rem 0; }
   }
 </style>
-<!-- seo:start -->
-<link rel="canonical" href="https://ortwed.dk/projekt-solroed.html">
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta name="theme-color" content="#475115">
-<meta property="og:type" content="article">
-<meta property="og:site_name" content="ORTWED Anlægs Entreprise APS">
-<meta property="og:locale" content="da_DK">
-<meta property="og:url" content="https://ortwed.dk/projekt-solroed.html">
-<meta property="og:title" content="Solrød Rådhus · Reference · ORTWED">
-<meta property="og:description" content="Nye stier i nordisk blandet chaussésten, kanter i corten-stål og et stort staudebed omkring rådhuset.">
-<meta property="og:image" content="https://ortwed.dk/images/og-solroed.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Solrød Rådhus · Reference · ORTWED">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Solrød Rådhus · Reference · ORTWED">
-<meta name="twitter:description" content="Nye stier i nordisk blandet chaussésten, kanter i corten-stål og et stort staudebed omkring rådhuset.">
-<meta name="twitter:image" content="https://ortwed.dk/images/og-solroed.jpg">
-<!-- seo:end -->
 </head>
 <body>
 <header>
@@ -804,7 +788,7 @@
           </div>
         </li>
         <li><a href="index.html#om" >Om mig</a></li>
-        <li><a href="referencer.html" class="active" >Referencer</a></li>
+        <li><a href="referencer.html" >Referencer</a></li>
         <li><a href="hundested.html" >Hundested</a></li>
         <li><a href="kontakt.html" >Kontakt</a></li>
       </ul>
@@ -817,365 +801,36 @@
     <button class="menu-toggle" onclick="document.getElementById('mainnav').classList.toggle('open')">☰</button>
   </div>
 </header>
-<style>
-  /* ---------- OVERBLIK: kort-grid ---------- */
-  .refs-grid-section { padding: 4.5rem 0 5rem; background: var(--white); }
-  .refs-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.6rem;
-  }
-  .ref-card {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    overflow: hidden;
-    border-radius: 4px;
-    background: var(--gray-bg);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-  .ref-card:hover { transform: translateY(-4px); box-shadow: 0 14px 32px rgba(0,0,0,0.14); }
-  .ref-card-media { position: relative; aspect-ratio: 4/3; overflow: hidden; flex: 0 0 auto; }
-  .ref-card-media img {
-    width: 100%; height: 100%; object-fit: cover;
-    transition: transform 0.6s;
-  }
-  .ref-card:hover .ref-card-media img { transform: scale(1.06); }
-  .ref-card-tag {
-    position: absolute; top: 1rem; left: 1rem;
-    background: rgba(255,255,255,0.94);
-    color: var(--green);
-    font-size: 0.68rem; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 0.14em;
-    padding: 0.4rem 0.85rem; border-radius: 2px;
-  }
-  .ref-card-body {
-    padding: 1.4rem 1.5rem 1.6rem; background: var(--white);
-    flex: 1 1 auto; display: flex; flex-direction: column; text-align: left;
-  }
-  .ref-card-place {
-    font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.18em;
-    color: var(--text-light); font-weight: 600; margin-bottom: 0.5rem;
-  }
-  .ref-card-body h3 {
-    font-size: 1.2rem; color: var(--text); margin-bottom: 0.5rem; line-height: 1.25;
-    text-align: left; text-transform: none; letter-spacing: -0.01em;
-  }
-  .ref-card-body p {
-    color: var(--text-muted); font-size: 0.92rem; line-height: 1.6; margin-bottom: 1rem;
-  }
-  .ref-card-link {
-    font-size: 0.85rem; font-weight: 600; color: var(--green);
-    display: inline-flex; align-items: center; gap: 0.4rem;
-    margin-top: auto; align-self: flex-start;
-  }
-  .ref-card:hover .ref-card-link { color: var(--green-dark); }
-  .ref-card-count {
-    position: absolute; bottom: 1rem; right: 1rem;
-    background: rgba(0,0,0,0.55); color: #fff;
-    font-size: 0.72rem; font-weight: 600;
-    padding: 0.3rem 0.7rem; border-radius: 2px;
-  }
-
-  /* ---------- PROJEKTSIDE ---------- */
-  .proj-back { padding: 1.6rem 0 0; background: var(--white); }
-  .proj-back a {
-    font-size: 0.85rem; font-weight: 600; color: var(--text-muted);
-    display: inline-flex; align-items: center; gap: 0.45rem;
-  }
-  .proj-back a:hover { color: var(--green); }
-
-  .proj-intro { padding: 3rem 0 2.5rem; background: var(--white); text-align: center; }
-  .proj-intro .container { max-width: 820px; }
-  .proj-meta {
-    display: inline-block; font-size: 0.72rem; text-transform: uppercase;
-    letter-spacing: 0.2em; font-weight: 700; color: var(--green);
-    background: rgba(71,81,21,0.08); padding: 0.5rem 1.2rem;
-    border-radius: 2px; margin-bottom: 1.4rem;
-  }
-  .proj-intro h1 { font-size: clamp(1.9rem, 4vw, 2.9rem); color: var(--text); margin-bottom: 0.6rem; }
-  .proj-intro .proj-sub {
-    font-family: 'Playfair Display', serif; font-size: 1.15rem;
-    color: var(--green); margin-bottom: 1.4rem;
-  }
-  .proj-intro .lead { color: var(--text-muted); font-size: 1.08rem; line-height: 1.7; }
-
-  .proj-stats {
-    display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap;
-    margin: 2.5rem auto 0; padding: 1.4rem 0;
-    border-top: 1px solid var(--gray-line); border-bottom: 1px solid var(--gray-line);
-    max-width: 900px;
-  }
-  .proj-stat { text-align: center; }
-  .proj-stat-label {
-    font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em;
-    color: var(--text-light); margin-bottom: 0.25rem;
-  }
-  .proj-stat-value {
-    font-family: 'Playfair Display', serif; font-size: 1.1rem;
-    color: var(--text); font-weight: 600;
-  }
-
-  /* Ledebillede - fri hoejde, aldrig beskaaret til strimmel */
-  .proj-hero { padding: 2.5rem 0 0; background: var(--white); }
-  .proj-hero figure { max-width: 1000px; margin: 0 auto; }
-  .proj-hero img {
-    width: 100%; height: auto; max-height: 620px;
-    object-fit: cover; object-position: center; border-radius: 4px;
-    cursor: zoom-in;
-  }
-  .proj-hero figcaption {
-    text-align: center; font-size: 0.85rem; color: var(--text-light);
-    margin-top: 0.8rem;
-  }
-
-  /* Masonry-galleri: bevarer billedernes egne proportioner.
-     Baade staaende og liggende billeder vises helt - intet beskaeres. */
-  .proj-gallery-section { padding: 2.5rem 0 1rem; background: var(--white); }
-  .proj-gallery { column-gap: 1rem; }
-  .proj-gallery.cols-2 { columns: 2; }
-  .proj-gallery.cols-3 { columns: 3; }
-  .proj-gallery figure {
-    break-inside: avoid; margin: 0 0 1rem; position: relative;
-    overflow: hidden; border-radius: 3px; background: var(--gray-bg);
-  }
-  .proj-gallery img {
-    width: 100%; height: auto; display: block;
-    transition: transform 0.5s; cursor: zoom-in;
-  }
-  .proj-gallery figure:hover img { transform: scale(1.04); }
-
-  /* Historie */
-  .proj-story-section { padding: 4rem 0 1rem; background: var(--white); }
-  .proj-story { max-width: 760px; margin: 0 auto; }
-  .proj-story h2 {
-    font-size: 1.2rem; color: var(--text); margin: 2.4rem 0 0.9rem;
-    text-align: left; padding-left: 1rem; border-left: 3px solid var(--green);
-  }
-  .proj-story h2:first-child { margin-top: 0; }
-  .proj-story p {
-    color: var(--text-muted); line-height: 1.8; margin-bottom: 1.1rem; text-align: left;
-  }
-  .proj-draft {
-    display: block; font-size: 0.82rem; color: var(--text-light);
-    font-style: italic; margin-top: 2.2rem; padding-top: 1.3rem;
-    border-top: 1px dashed var(--gray-line);
-  }
-
-  /* Naeste projekt */
-  .proj-next { padding: 3.5rem 0 4.5rem; background: var(--gray-bg); }
-  .proj-next-title {
-    text-align: center; font-size: 1.05rem; text-transform: uppercase;
-    letter-spacing: 0.18em; color: var(--text-light); margin-bottom: 2rem;
-    font-weight: 600;
-  }
-  .proj-next-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
-
-  /* Lightbox - ingen browser storage, ren DOM */
-  .lb {
-    position: fixed; inset: 0; background: rgba(15,17,10,0.94);
-    display: none; align-items: center; justify-content: center;
-    z-index: 999; padding: 2rem;
-  }
-  .lb.open { display: flex; }
-  .lb img { max-width: 100%; max-height: 86vh; width: auto; border-radius: 3px; }
-  .lb-cap {
-    position: absolute; bottom: 1.4rem; left: 0; right: 0; text-align: center;
-    color: rgba(255,255,255,0.85); font-size: 0.9rem; padding: 0 2rem;
-  }
-  .lb-btn {
-    position: absolute; background: none; border: none; color: #fff;
-    font-size: 2.2rem; cursor: pointer; line-height: 1;
-    padding: 0.6rem 1rem; opacity: 0.75; transition: opacity 0.2s;
-  }
-  .lb-btn:hover { opacity: 1; }
-  .lb-close { top: 0.8rem; right: 1rem; font-size: 2.6rem; }
-  .lb-prev { left: 0.5rem; top: 50%; transform: translateY(-50%); }
-  .lb-next { right: 0.5rem; top: 50%; transform: translateY(-50%); }
-
-  @media (max-width: 1000px) {
-    .refs-grid { grid-template-columns: repeat(2, 1fr); }
-    .proj-gallery.cols-2, .proj-gallery.cols-3 { columns: 2; }
-    .proj-next-grid { grid-template-columns: repeat(2, 1fr); }
-  }
-  @media (max-width: 640px) {
-    .refs-grid { grid-template-columns: 1fr; }
-    .proj-gallery.cols-2, .proj-gallery.cols-3 { columns: 1; }
-    .proj-next-grid { grid-template-columns: 1fr; }
-    .proj-stats { gap: 1.6rem; }
-    .refs-grid-section, .proj-story-section { padding-top: 2.5rem; }
-    .lb-btn { font-size: 1.8rem; }
-  }
-</style>
-
-
-<section class="proj-back">
-  <div class="container"><a href="referencer.html">&larr; Alle referencer</a></div>
+<section class="page-header">
+  <div class="container">
+    <div class="eyebrow">Fejl 404</div>
+    <h1>Siden her findes ikke</h1>
+    <p>Måske er linket gammelt, eller også er der sket en tastefejl.
+       Herunder er vejene videre.</p>
+  </div>
 </section>
 
-<section class="proj-intro">
-  <div class="container">
-    <div class="proj-meta">Erhverv &middot; Solrød</div>
-    <h1>Solrød Rådhus</h1>
-    <div class="proj-sub">Nordisk blandet chaussésten, corten-stål og staudebede</div>
-    <p class="lead">Da arealerne omkring Solrød Rådhus skulle opdateres, blev det til et projekt med nordisk blandet chaussésten, skarpe kanter i corten-stål og et staudebed der bærer hele anlægget.</p>
-  </div>
-  <div class="container">
-    <div class="proj-stats">
-        <div class="proj-stat">
-          <div class="proj-stat-label">Type</div>
-          <div class="proj-stat-value">Belægning + beplantning</div>
-        </div>
-        <div class="proj-stat">
-          <div class="proj-stat-label">Materialer</div>
-          <div class="proj-stat-value">Nordisk blandet chaussésten · Corten-stål</div>
-        </div>
-        <div class="proj-stat">
-          <div class="proj-stat-label">Særligt</div>
-          <div class="proj-stat-value">Offentlig opgave</div>
-        </div>
-        <div class="proj-stat">
-          <div class="proj-stat-label">Varighed</div>
-          <div class="proj-stat-value">3 uger</div>
-        </div>
+<section style="padding:4.5rem 0 5rem;background:var(--white);">
+  <div class="container" style="max-width:760px;text-align:center;">
+    <p style="color:var(--text-muted);margin-bottom:2.2rem;font-size:1.05rem;">
+      Jeg laver belægning, brolægning, anlægsarbejde, hegn og græs i Nordsjælland.
+    </p>
+    <div style="display:flex;flex-wrap:wrap;gap:0.8rem;justify-content:center;margin-bottom:2.5rem;">
+      <a href="index.html" class="btn btn-primary">Til forsiden</a>
+      <a href="referencer.html" class="btn" style="border-color:var(--green);color:var(--green);">Se mine projekter</a>
+      <a href="kontakt.html" class="btn" style="border-color:var(--green);color:var(--green);">Kontakt mig</a>
     </div>
+    <ul style="list-style:none;display:flex;flex-wrap:wrap;gap:0.5rem 1.6rem;justify-content:center;">
+      <li><a href="flisebelaegning.html" style="color:var(--green);font-weight:600;">Flisebelægning</a></li>
+      <li><a href="brolaegning.html" style="color:var(--green);font-weight:600;">Brolægning</a></li>
+      <li><a href="anlaegsarbejde.html" style="color:var(--green);font-weight:600;">Anlægsarbejde</a></li>
+      <li><a href="hegn.html" style="color:var(--green);font-weight:600;">Hegn</a></li>
+      <li><a href="graes.html" style="color:var(--green);font-weight:600;">Græs</a></li>
+      <li><a href="renovationsskjuler.html" style="color:var(--green);font-weight:600;">Renovationsskjulere</a></li>
+      <li><a href="hundested.html" style="color:var(--green);font-weight:600;">Hundested</a></li>
+    </ul>
   </div>
 </section>
-
-<section class="proj-hero">
-  <div class="container">
-    <figure>
-      <img src="images/projekter/solroed-raadhus/solroed-5.jpg" alt="Staudebed med echinacea mellem brostensbelægning og corten-stålkant ved Solrød Rådhus" data-lb>
-      <figcaption>Staudebed med echinacea mellem brostensbelægning og corten-stålkant ved Solrød Rådhus</figcaption>
-    </figure>
-  </div>
-</section>
-
-<section class="proj-gallery-section">
-  <div class="container">
-    <div class="proj-gallery cols-2">
-        <figure><img src="images/projekter/solroed-raadhus/solroed-4.jpg" alt="Chaussésten i aftenlys hvor stenenes struktur træder frem" loading="lazy" data-lb></figure>
-        <figure><img src="images/projekter/solroed-raadhus/solroed-3.jpg" alt="Brostensbelægning ført helt op til kanten i corten-stål" loading="lazy" data-lb></figure>
-        <figure><img src="images/projekter/solroed-raadhus/solroed-2.jpg" alt="Corten-stålkant mod bed med prydgræsser" loading="lazy" data-lb></figure>
-        <figure><img src="images/projekter/solroed-raadhus/solroed-1.jpg" alt="Nyanlagt sti med staudebed langs rådhuset" loading="lazy" data-lb></figure>
-    </div>
-  </div>
-</section>
-
-<section class="proj-story-section">
-  <div class="container">
-    <div class="proj-story">
-      <h2>Baggrunden</h2>
-      <p>Arealerne omkring rådhuset trængte til et løft. Belægningen var slidt, kanterne skulle strammes op, og der var ønske om et frodigt bed der kunne binde det hele sammen — uden at blive tungt og pasningskrævende.</p>
-      <h2>Løsningen</h2>
-      <p>Jeg valgte nordisk blandet chaussésten som hovedmateriale. Farvespillet gør fladen levende frem for ensartet, og det lille format følger de buede forløb uden at stenene skal skæres på plads. Kanterne blev lavet i corten-stål — det ruster smukt, skaber en skarp overgang mellem belægning og bed, og kræver ingen vedligeholdelse.</p>
-      <h2>Detaljerne</h2>
-      <p>Bærelaget blev bygget op så belægningen kan holde til både gangtrafik og lettere kørsel. Corten-kanterne blev sat fast, så linjerne stadig er rette om ti år. Bedet blev tilplantet med echinacea og prydgræsser, der giver farve fra sommer til efterår.</p>
-      <h2>Resultatet</h2>
-      <p>Området fremstår roligt og indbydende. Belægningen tager sig særligt godt ud sidst på dagen, hvor lyset står lavt hen over stenene, og bedet står som et levende midtpunkt der ændrer sig med årstiderne.</p>
-    </div>
-  </div>
-</section>
-
-<section class="proj-next">
-  <div class="container">
-    <div class="proj-next-title">Andre projekter</div>
-    <div class="proj-next-grid">
-      <a href="projekt-vedbaek.html" class="ref-card">
-        <div class="ref-card-media">
-          <img src="images/projekter/vedbaek-natursten/vedbaek-1.jpg" alt="Færdig terrasse i indisk sandsten lagt i multiformat langs husets facade" loading="lazy">
-          <span class="ref-card-tag">Privat</span>
-          <span class="ref-card-count">5 billeder</span>
-        </div>
-        <div class="ref-card-body">
-          <div class="ref-card-place">Vedbæk</div>
-          <h3>Natursten i Vedbæk</h3>
-          <p>Hele udearealet bundet sammen i ét materiale — terrasse, muret trappe og gennemgående havegang.</p>
-          <span class="ref-card-link">Se projektet &rarr;</span>
-        </div>
-      </a>
-      <a href="projekt-lynaes.html" class="ref-card">
-        <div class="ref-card-media">
-          <img src="images/projekter/lynaes/lynaes-1.jpg" alt="Færdig indkørsel i grå betonbrosten langs huset og ind mod carporten" loading="lazy">
-          <span class="ref-card-tag">Privat</span>
-          <span class="ref-card-count">3 billeder</span>
-        </div>
-        <div class="ref-card-body">
-          <div class="ref-card-place">Hundested</div>
-          <h3>Indkørsel i Lynæs</h3>
-          <p>Ny indkørsel i grå betonbrosten plus en støttemur der tager terrænspringet mod vejen.</p>
-          <span class="ref-card-link">Se projektet &rarr;</span>
-        </div>
-      </a>
-      <a href="projekt-hornbaek.html" class="ref-card">
-        <div class="ref-card-media">
-          <img src="images/projekter/hornbaek-baalplads/hornbaek-1.jpg" alt="Færdig cirkulær bålplads i marksten med bænke og stubbe omkring sandcirklen" loading="lazy">
-          <span class="ref-card-tag">Privat</span>
-          <span class="ref-card-count">5 billeder</span>
-        </div>
-        <div class="ref-card-body">
-          <div class="ref-card-place">Hornbæk</div>
-          <h3>Bålplads i Hornbæk</h3>
-          <p>Cirkulær bålplads i marksten med bænke skåret af stammer fra haven.</p>
-          <span class="ref-card-link">Se projektet &rarr;</span>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
-
-
-<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Billedvisning">
-  <button class="lb-btn lb-close" id="lbClose" aria-label="Luk">&times;</button>
-  <button class="lb-btn lb-prev" id="lbPrev" aria-label="Forrige billede">&#8249;</button>
-  <img id="lbImg" src="" alt="">
-  <button class="lb-btn lb-next" id="lbNext" aria-label="Naeste billede">&#8250;</button>
-  <div class="lb-cap" id="lbCap"></div>
-</div>
-<script>
-(function () {
-  var shots = Array.prototype.slice.call(document.querySelectorAll('[data-lb]'));
-  if (!shots.length) return;
-  var box = document.getElementById('lb'),
-      pic = document.getElementById('lbImg'),
-      cap = document.getElementById('lbCap'),
-      at = 0;
-
-  function show(i) {
-    at = (i + shots.length) % shots.length;
-    pic.src = shots[at].getAttribute('src');
-    pic.alt = shots[at].getAttribute('alt') || '';
-    cap.textContent = shots[at].getAttribute('alt') || '';
-  }
-  function open(i) { show(i); box.classList.add('open'); document.body.style.overflow = 'hidden'; }
-  function close() { box.classList.remove('open'); document.body.style.overflow = ''; }
-
-  shots.forEach(function (el, i) {
-    el.addEventListener('click', function () { open(i); });
-  });
-  document.getElementById('lbClose').addEventListener('click', close);
-  document.getElementById('lbPrev').addEventListener('click', function (e) { e.stopPropagation(); show(at - 1); });
-  document.getElementById('lbNext').addEventListener('click', function (e) { e.stopPropagation(); show(at + 1); });
-  box.addEventListener('click', function (e) { if (e.target === box) close(); });
-  document.addEventListener('keydown', function (e) {
-    if (!box.classList.contains('open')) return;
-    if (e.key === 'Escape') close();
-    if (e.key === 'ArrowLeft') show(at - 1);
-    if (e.key === 'ArrowRight') show(at + 1);
-  });
-})();
-</script>
-
-<section class="cta-simple">
-  <div class="container">
-    <h2>Har du et projekt jeg kan hjælpe med?</h2>
-    <p>Ring, skriv eller send en henvendelse, jeg vender tilbage inden for 24 timer.</p>
-    <a href="kontakt.html" class="btn-cta">Kontakt mig</a>
-  </div>
-</section>
-
-
 <footer>
   <div class="container">
     <div class="footer-grid">
