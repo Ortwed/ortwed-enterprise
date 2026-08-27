@@ -782,6 +782,43 @@
 <meta name="twitter:description" content="Trædesten, rund plads og nyt terræn omkring et sommerhus tæt ved vandet — koordineret med et nybyg.">
 <meta name="twitter:image" content="https://ortwed.dk/images/og-kikhavn.jpg">
 <!-- seo:end -->
+<!-- analytics:start -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  // Alt afvist indtil brugeren selv siger ja. Skal staa foer gtag.js.
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'functionality_storage': 'granted',
+    'security_storage': 'granted',
+    'wait_for_update': 500
+  });
+  gtag('set', 'ads_data_redaction', true);
+  gtag('set', 'url_passthrough', true);
+
+  // Tidligere samtykke genlaeses med det samme, saa der ikke gaar
+  // maalinger tabt paa side 2 og frem.
+  (function(){
+    var m = document.cookie.match(/(?:^|; )ortwed_samtykke=([^;]*)/);
+    if (m && decodeURIComponent(m[1]) === 'alle') {
+      gtag('consent', 'update', {
+        'ad_storage': 'granted',
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted',
+        'analytics_storage': 'granted'
+      });
+    }
+  })();
+
+  gtag('js', new Date());
+  gtag('config', 'G-4EVG18LS64', { 'anonymize_ip': true });
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4EVG18LS64"></script>
+<!-- analytics:end -->
 </head>
 <body>
 <header>
@@ -1202,10 +1239,143 @@
       </div>
     </div>
     <div class="footer-bottom">
-      © 2026 ORTWED Anlægs Entreprise · CVR 43071149 · Anlægsgartner og brolægger i Nordsjælland
+      © 2026 ORTWED Anlægs Entreprise · CVR 43071149 · Anlægsgartner og brolægger i Nordsjælland<br>
+      <a href="cookies.html">Cookiepolitik</a> · <button type="button" class="ck-footerlink" onclick="return ckAabnIndstillinger()">Skift cookieindstillinger</button>
     </div>
   </div>
 </footer>
+
+
+<style>
+  .ck-banner {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 9999;
+    background: #FFFFFF; border-top: 3px solid #475115;
+    box-shadow: 0 -4px 24px rgba(0,0,0,0.13);
+    padding: 1.4rem 1.5rem; display: none;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  .ck-banner.vis { display: block; }
+  .ck-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr auto; gap: 1.6rem; align-items: center;
+  }
+  .ck-tekst h2 {
+    font-size: 1.05rem; margin: 0 0 0.4rem; color: #1A1A1A; font-weight: 600;
+  }
+  .ck-tekst p {
+    margin: 0; font-size: 0.88rem; line-height: 1.6; color: #5C5C5C; max-width: 62ch;
+  }
+  .ck-tekst a { color: #475115; font-weight: 600; border-bottom: 1px solid #475115; }
+  .ck-knapper { display: flex; gap: 0.7rem; flex-shrink: 0; }
+  .ck-knapper button {
+    font-family: inherit; font-size: 0.92rem; font-weight: 600;
+    padding: 0.85rem 1.5rem; border-radius: 3px; cursor: pointer;
+    border: 2px solid #475115; white-space: nowrap; transition: all 0.15s;
+  }
+  .ck-afvis { background: #FFFFFF; color: #475115; }
+  .ck-afvis:hover { background: #F0EEE7; }
+  .ck-accept { background: #475115; color: #FFFFFF; }
+  .ck-accept:hover { background: #2D3510; border-color: #2D3510; }
+  @media (max-width: 780px) {
+    .ck-inner { grid-template-columns: 1fr; gap: 1.1rem; }
+    .ck-knapper button { flex: 1; padding: 0.9rem 1rem; }
+  }
+
+  .ck-footerlink {
+    background: none; border: none; padding: 0; margin: 0;
+    font: inherit; color: inherit; cursor: pointer;
+    text-decoration: underline; text-underline-offset: 2px;
+  }
+  .ck-footerlink:hover { color: #FFFFFF; }
+</style>
+
+<div class="ck-banner" id="ckBanner" role="dialog" aria-modal="false"
+     aria-labelledby="ckTitel" aria-describedby="ckBesk">
+  <div class="ck-inner">
+    <div class="ck-tekst">
+      <h2 id="ckTitel">Cookies på ortwed.dk</h2>
+      <p id="ckBesk">Jeg bruger cookies til to ting: at se hvordan siden bliver brugt
+        (Google Analytics) og at måle effekten af min annoncering. Derudover sættes der
+        cookies af det indlejrede kort fra Google Maps på kontaktsiden.
+        Vælger du "Kun nødvendige", sættes ingen af delene — og siden fungerer præcis
+        som før. <a href="cookies.html">Læs mere om cookies</a>.</p>
+    </div>
+    <div class="ck-knapper">
+      <button type="button" class="ck-afvis" onclick="ckSvar('noedvendige')">Kun nødvendige</button>
+      <button type="button" class="ck-accept" onclick="ckSvar('alle')">Accepter alle</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var NAVN = 'ortwed_samtykke';
+
+  function laes(){
+    var m = document.cookie.match(new RegExp('(?:^|; )' + NAVN + '=([^;]*)'));
+    return m ? decodeURIComponent(m[1]) : null;
+  }
+  function skriv(v){
+    // 12 maaneder - derefter skal der spoerges igen
+    var udloeb = new Date(Date.now() + 365*24*60*60*1000).toUTCString();
+    document.cookie = NAVN + '=' + encodeURIComponent(v) +
+                      '; expires=' + udloeb + '; path=/; SameSite=Lax';
+  }
+  function slet(){
+    document.cookie = NAVN + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; SameSite=Lax';
+  }
+
+  var banner = document.getElementById('ckBanner');
+
+  function ckOpdaterGoogle(valg){
+    if (typeof gtag !== 'function') return;
+    var g = (valg === 'alle') ? 'granted' : 'denied';
+    gtag('consent', 'update', {
+      'ad_storage': g,
+      'ad_user_data': g,
+      'ad_personalization': g,
+      'analytics_storage': g
+    });
+  }
+
+  window.ckSvar = function(valg){
+    skriv(valg);
+    ckOpdaterGoogle(valg);
+    if (banner) banner.classList.remove('vis');
+    if (valg === 'alle') ckIndlaesKort();
+  };
+
+  window.ckAabnIndstillinger = function(){
+    slet();
+    if (banner) banner.classList.add('vis');
+    if (banner) banner.scrollIntoView({behavior:'smooth', block:'end'});
+    return false;
+  };
+
+  window.ckIndlaesKort = function(){
+    var w = document.getElementById('mapWrap');
+    if (!w || w.querySelector('iframe')) return;
+    w.innerHTML = '<iframe src="https://maps.google.com/maps?q=Amtsvejen%20211A%2C%203390%20Hundested&z=15&output=embed"'
+                + ' allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"'
+                + ' title="ORTWED Anl\u00e6gs Entreprise \u2014 Amtsvejen 211A, 3390 Hundested"></iframe>';
+  };
+
+  // Kun kortet accepteres, direkte fra pladsholderen paa kontaktsiden
+  window.ckAccepterKort = function(){
+    skriv('alle');
+    ckOpdaterGoogle('alle');
+    if (banner) banner.classList.remove('vis');
+    ckIndlaesKort();
+  };
+
+  var valgt = laes();
+  if (valgt === null) {
+    if (banner) banner.classList.add('vis');
+  } else if (valgt === 'alle') {
+    ckIndlaesKort();
+  }
+})();
+</script>
 
 </body>
 </html>
