@@ -768,24 +768,6 @@
     border-left: 3px solid var(--green); margin: 0;
   }
   .form-hint a { color: var(--green); font-weight: 600; border-bottom: 1px solid var(--green); }
-  .form-tak {
-    background: var(--white); padding: 3rem 2.5rem; border-radius: 4px; text-align: center;
-  }
-  .form-tak-ikon {
-    width: 62px; height: 62px; margin: 0 auto 1.4rem; border-radius: 50%;
-    background: var(--green); color: #fff; font-size: 1.9rem;
-    display: flex; align-items: center; justify-content: center;
-  }
-  .form-tak h3 { font-size: 1.4rem; color: var(--text); margin-bottom: 0.8rem; }
-  .form-tak p { color: var(--text-muted); line-height: 1.7; margin-bottom: 0.8rem; }
-  .form-tak-note { font-size: 0.9rem; }
-  .form-tak-note a { color: var(--green); font-weight: 600; }
-  .form-fejl {
-    background: rgba(180, 40, 40, 0.08); border-left: 3px solid #B42828;
-    padding: 0.9rem 1.1rem; border-radius: 3px; margin-top: 1rem;
-    font-size: 0.92rem; color: var(--text); line-height: 1.6;
-  }
-  .form-fejl a { color: var(--green); font-weight: 600; }
 </style>
 
 <!-- seo:start -->
@@ -827,7 +809,6 @@
             <a href="anlaegsarbejde.html" >Anlægsarbejde</a>
             <a href="hegn.html" >Hegn</a>
             <a href="graes.html" >Græs</a>
-            <a href="renovationsskjuler.html" >Renovationsskjulere</a>
           </div>
         </li>
         <li><a href="index.html#om" >Om mig</a></li>
@@ -943,7 +924,6 @@
               <option>Flisebelægning</option>
               <option>Brolægning</option>
               <option>Anlægsarbejde / haveanlæg</option>
-              <option>Renovationsskjuler</option>
               <option>Kombineret projekt</option>
               <option>Andet</option>
             </select>
@@ -988,18 +968,10 @@
         <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"
                aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;">
 
-        <button type="submit" id="kontaktform-knap">Send henvendelse</button>
+        <button type="submit">Send henvendelse</button>
 
         <p class="form-note">Jeg vender tilbage inden for 24 timer på hverdage.</p>
       </form>
-
-      <div id="kontaktform-tak" class="form-tak" hidden role="status" aria-live="polite">
-        <div class="form-tak-ikon">&#10003;</div>
-        <h3>Tak for din henvendelse</h3>
-        <p>Jeg har modtaget den og vender tilbage inden for 24 timer på hverdage.</p>
-        <p class="form-tak-note">Har du billeder af opgaven, må du meget gerne sende dem til
-          <a href="mailto:info@ortwed.dk">info@ortwed.dk</a>.</p>
-      </div>
 
       <style>
         .form-success, .form-error { background: var(--white); padding: 2.5rem; border-radius: 4px; }
@@ -1036,7 +1008,10 @@ function loadOrtwedMap() {
     var btn = form.querySelector('button[type="submit"]');
     var label = btn ? btn.textContent : '';
     if(btn){ btn.disabled = true; btn.textContent = 'Sender...'; }
-    fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } })
+    var data = new FormData(form);
+    var mailfelt = form.querySelector('#email');
+    if (mailfelt && mailfelt.value) data.append('_replyto', mailfelt.value);
+    fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
       .then(function(res){
         if(res.ok){
           form.reset();
@@ -1074,7 +1049,6 @@ function loadOrtwedMap() {
           <li><a href="anlaegsarbejde.html">Anlægsarbejde</a></li>
           <li><a href="hegn.html">Hegn</a></li>
           <li><a href="graes.html">Græs</a></li>
-          <li><a href="renovationsskjuler.html">Renovationsskjulere</a></li>
           <li><a href="referencer.html">Referencer</a></li>
           <li><a href="hundested.html">Hundested</a></li>
           <li><a href="kontakt.html">Kontakt</a></li>
@@ -1087,57 +1061,5 @@ function loadOrtwedMap() {
   </div>
 </footer>
 
-
-<script>
-(function () {
-  var form = document.getElementById('kontaktform');
-  var tak  = document.getElementById('kontaktform-tak');
-  var knap = document.getElementById('kontaktform-knap');
-  if (!form || !tak || !knap) return;
-
-  // Uden fetch falder vi tilbage til almindelig POST — formularen virker stadig.
-  if (!window.fetch || !window.FormData) return;
-
-  var normalTekst = knap.textContent;
-
-  function visFejl(besked) {
-    var d = form.querySelector('.form-fejl');
-    if (!d) {
-      d = document.createElement('div');
-      d.className = 'form-fejl';
-      knap.parentNode.insertBefore(d, knap.nextSibling);
-    }
-    d.innerHTML = besked;
-  }
-
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    if (!form.checkValidity()) { form.reportValidity(); return; }
-
-    var data = new FormData(form);
-    // Saa Nicolai kan trykke "besvar" direkte i mailen
-    var mail = form.querySelector('#email');
-    if (mail && mail.value) data.append('_replyto', mail.value);
-
-    knap.disabled = true;
-    knap.textContent = 'Sender...';
-
-    fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
-      .then(function (r) {
-        if (!r.ok) throw new Error('status ' + r.status);
-        form.hidden = true;
-        tak.hidden = false;
-        tak.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      })
-      .catch(function () {
-        knap.disabled = false;
-        knap.textContent = normalTekst;
-        visFejl('Noget gik galt, og henvendelsen blev ikke sendt. '
-              + 'Prøv igen, eller ring på <a href="tel:+4540682220">40 68 22 20</a> '
-              + 'eller skriv til <a href="mailto:info@ortwed.dk">info@ortwed.dk</a>.');
-      });
-  });
-})();
-</script>
 </body>
 </html>
