@@ -113,61 +113,6 @@
   .social-icon:hover { background: var(--green); }
   .menu-toggle { display: none; background: none; border: none; font-size: 1.6rem; cursor: pointer; }
 
-  /* HERO (forsiden) */
-  .hero {
-    position: relative;
-    height: calc(100vh - 96px);
-    min-height: 600px;
-    overflow: hidden;
-    background: var(--green-dark);
-  }
-  .hero-image {
-    position: absolute;
-    inset: 0;
-    background-image: url('images/hero-indkorsel.jpeg');
-    background-size: cover;
-    background-position: center 60%;
-    animation: kenBurns 25s ease-in-out infinite alternate;
-  }
-  @keyframes kenBurns {
-    from { transform: scale(1.0); }
-    to   { transform: scale(1.12); }
-  }
-  .hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.5) 100%);
-    z-index: 1;
-  }
-  .hero-content {
-    position: relative;
-    z-index: 2;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0 2rem;
-    color: var(--white);
-  }
-  .hero h1 {
-    font-size: clamp(2.4rem, 5.5vw, 4.2rem);
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-    max-width: 900px;
-    line-height: 1.15;
-    color: var(--white);
-    text-shadow: 0 2px 20px rgba(0,0,0,0.3);
-  }
-  .hero p {
-    font-size: clamp(1rem, 1.6vw, 1.15rem);
-    max-width: 640px;
-    margin-bottom: 2.5rem;
-    line-height: 1.6;
-    color: var(--white);
-    text-shadow: 0 1px 10px rgba(0,0,0,0.4);
-  }
   .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
   .btn {
     display: inline-block;
@@ -322,74 +267,6 @@
     text-shadow: 0 2px 10px rgba(0,0,0,0.4);
   }
 
-  /* SPECIAL OFFER (renovationsskjuler on frontpage) */
-  .special-offer {
-    margin-top: 4rem;
-    padding-top: 4rem;
-    border-top: 1px solid var(--gray-line);
-  }
-  .special-offer-divider {
-    display: inline-block;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.25em;
-    color: var(--green);
-    background: rgba(71, 81, 21, 0.1);
-    padding: 0.5rem 1.2rem;
-    border-radius: 2px;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-  }
-  .special-offer h3 {
-    color: var(--text);
-    margin-bottom: 0.8rem;
-    font-size: clamp(1.4rem, 2.5vw, 2rem);
-  }
-  .special-offer > .container > p { color: var(--text-muted); margin-bottom: 2.5rem; font-size: 1.05rem; }
-  .special-card {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    max-width: 1000px;
-    margin: 0 auto;
-    background: var(--white);
-    border-radius: 4px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    text-align: left;
-    transition: transform 0.3s;
-  }
-  .special-card:hover { transform: translateY(-3px); }
-  .special-card-image {
-    aspect-ratio: auto;
-    background: url('images/projekter/renovationsskjuler/renovationsskjuler-1.jpg') center/cover;
-    min-height: 320px;
-  }
-  .special-card-content {
-    padding: 2.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .special-card-tag {
-    display: inline-block;
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: var(--green);
-    font-weight: 600;
-    margin-bottom: 0.8rem;
-  }
-  .special-card h4 {
-    font-size: 1.4rem;
-    color: var(--text);
-    margin-bottom: 0.8rem;
-  }
-  .special-card p {
-    color: var(--text-muted);
-    margin-bottom: 1.5rem;
-    font-size: 0.95rem;
-  }
-  .special-card .learn-more { align-self: flex-start; margin-top: 0; }
 
   /* SUBSITE CONTENT */
   .content-block {
@@ -657,7 +534,6 @@
     border-color: var(--green);
   }
   textarea { min-height: 120px; resize: vertical; }
-  input[type="file"] { padding: 0.5rem; }
   form button {
     width: 100%;
     padding: 1rem;
@@ -751,10 +627,7 @@
       box-shadow: 0 4px 20px rgba(0,0,0,0.1);
       z-index: 99;
     }
-    .hero { height: 75vh; min-height: 500px; }
     .services-grid { grid-template-columns: 1fr; }
-    .special-card { grid-template-columns: 1fr; }
-    .special-card-image { min-height: 240px; }
     .contact-grid { grid-template-columns: 1fr; }
     .form-row { grid-template-columns: 1fr; }
     .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
@@ -1078,7 +951,7 @@
 <section class="proj-hero">
   <div class="container">
     <figure>
-      <img src="images/projekter/hornbaek-baalplads/hornbaek-1.jpg" alt="Færdig cirkulær bålplads i marksten med bænke og stubbe omkring sandcirklen" data-lb>
+      <img src="images/projekter/hornbaek-baalplads/hornbaek-1.webp" alt="Færdig cirkulær bålplads i marksten med bænke og stubbe omkring sandcirklen" data-lb>
       <figcaption>Færdig cirkulær bålplads i marksten med bænke og stubbe omkring sandcirklen</figcaption>
     </figure>
   </div>
@@ -1087,10 +960,10 @@
 <section class="proj-gallery-section">
   <div class="container">
     <div class="proj-gallery cols-2">
-        <figure><img src="images/projekter/hornbaek-baalplads/hornbaek-2.jpg" alt="Bålpladsen set fra den anden side med rhododendron og gran bagved" loading="lazy" data-lb></figure>
-        <figure><img src="images/projekter/hornbaek-baalplads/hornbaek-4.jpg" alt="Bænk skåret af en stamme fra haven, med den kløvede flade opad" loading="lazy" data-lb></figure>
-        <figure><img src="images/projekter/hornbaek-baalplads/hornbaek-3.jpg" alt="Bænken set hen over markstensbelægningen" loading="lazy" data-lb></figure>
-        <figure><img src="images/projekter/hornbaek-baalplads/hornbaek-5.jpg" alt="Markstenspladsen uden inventar — den runde form tegnet i sten" loading="lazy" data-lb></figure>
+        <figure><img src="images/projekter/hornbaek-baalplads/hornbaek-2.webp" alt="Bålpladsen set fra den anden side med rhododendron og gran bagved" loading="lazy" data-lb></figure>
+        <figure><img src="images/projekter/hornbaek-baalplads/hornbaek-4.webp" alt="Bænk skåret af en stamme fra haven, med den kløvede flade opad" loading="lazy" data-lb></figure>
+        <figure><img src="images/projekter/hornbaek-baalplads/hornbaek-3.webp" alt="Bænken set hen over markstensbelægningen" loading="lazy" data-lb></figure>
+        <figure><img src="images/projekter/hornbaek-baalplads/hornbaek-5.webp" alt="Markstenspladsen uden inventar — den runde form tegnet i sten" loading="lazy" data-lb></figure>
     </div>
   </div>
 </section>
@@ -1118,7 +991,7 @@
     <div class="proj-next-grid">
       <a href="projekt-solroed.html" class="ref-card">
         <div class="ref-card-media">
-          <img src="images/projekter/solroed-raadhus/solroed-5.jpg" alt="Staudebed med echinacea mellem brostensbelægning og corten-stålkant ved Solrød Rådhus" loading="lazy">
+          <img src="images/projekter/solroed-raadhus/solroed-5.webp" alt="Staudebed med echinacea mellem brostensbelægning og corten-stålkant ved Solrød Rådhus" loading="lazy">
           <span class="ref-card-tag">Erhverv</span>
           <span class="ref-card-count">5 billeder</span>
         </div>
@@ -1131,7 +1004,7 @@
       </a>
       <a href="projekt-vedbaek.html" class="ref-card">
         <div class="ref-card-media">
-          <img src="images/projekter/vedbaek-natursten/vedbaek-1.jpg" alt="Færdig terrasse i indisk sandsten lagt i multiformat langs husets facade" loading="lazy">
+          <img src="images/projekter/vedbaek-natursten/vedbaek-1.webp" alt="Færdig terrasse i indisk sandsten lagt i multiformat langs husets facade" loading="lazy">
           <span class="ref-card-tag">Privat</span>
           <span class="ref-card-count">5 billeder</span>
         </div>
@@ -1144,7 +1017,7 @@
       </a>
       <a href="projekt-lynaes.html" class="ref-card">
         <div class="ref-card-media">
-          <img src="images/projekter/lynaes/lynaes-1.jpg" alt="Færdig indkørsel i grå betonbrosten langs huset og ind mod carporten" loading="lazy">
+          <img src="images/projekter/lynaes/lynaes-1.webp" alt="Færdig indkørsel i grå betonbrosten langs huset og ind mod carporten" loading="lazy">
           <span class="ref-card-tag">Privat</span>
           <span class="ref-card-count">3 billeder</span>
         </div>
